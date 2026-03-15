@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Algo-Track: Dashboard">
+    <title>Algo-Track | Dashboard</title>
+    <link rel="stylesheet" href="./src/assets/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="./favicon.ico">
+</head>
+<body>
+    <div class="dashboard-layout">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <h2>Algo-Track</h2>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="#" class="nav-link active">Dashboard</a></li>
+                    <li><a href="#" class="nav-link" id="export-btn">Export to PDF</a></li>
+                    <li><a href="#" class="nav-link" id="activity-btn">Activity Log</a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-bottom">
+                <button id="theme-toggle" class="btn btn-secondary btn-full">Toggle Dark Mode</button>
+                <button id="logout-btn" class="btn btn-primary btn-full logout-btn">Logout</button>
+            </div>
+        </aside>
+        
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <header class="dashboard-header">
+                <h1>My Problems</h1>
+                <div class="search-container">
+                    <input type="text" id="search-input" placeholder="Search by title or tags..." class="search-input">
+                </div>
+            </header>
+            
+            <section class="add-problem-section">
+                <form id="add-problem-form" class="card form-card">
+                    <h3 id="form-heading">Add New Problem</h3>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="problem-title">Title</label>
+                            <input type="text" id="problem-title" required placeholder="e.g. Two Sum">
+                        </div>
+                        <div class="form-group">
+                            <label for="problem-url">URL</label>
+                            <input type="url" id="problem-url" placeholder="https://leetcode.com/...">
+                        </div>
+                        <div class="form-group">
+                            <label for="problem-tags">Tags (comma separated)</label>
+                            <input type="text" id="problem-tags" placeholder="e.g. Array, Hash Table">
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-secondary" id="cancel-edit-btn" style="display: none; margin-right: 1rem;">Cancel</button>
+                        <button type="submit" class="btn btn-primary" id="submit-problem-btn">Add Problem</button>
+                    </div>
+                </form>
+            </section>
+            
+            <section class="problems-grid" id="problems-grid">
+                <!-- Problem cards injected dynamically by JavaScript -->
+            </section>
+        </main>
+    </div>
+
+    <!-- Activity Log Modal Overlay -->
+    <div id="activity-modal" class="modal-overlay" style="display: none;">
+        <div class="modal-card slide-up">
+            <div class="modal-header">
+                <h3>Your Activity</h3>
+                <button id="close-activity-btn" class="close-btn">&times;</button>
+            </div>
+            <div class="modal-body" id="activity-list">
+                <!-- Activity items injected dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Load dashboard controller -->
+    <script type="module" src="./src/pages/dashboard.js"></script>
+</body>
+</html>

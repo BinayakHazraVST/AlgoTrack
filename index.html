@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Algo-Track: A spaced-repetition coding problem tracker">
+    <title>Algo-Track | Login</title>
+    <link rel="stylesheet" href="./src/assets/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="./favicon.ico">
+</head>
+<body>
+    <div class="split-layout">
+        <!-- New Illustration side -->
+        <div class="split-image-container fade-in">
+            <img src="./src/assets/images/login_hero.png" alt="AlgoTrack Coding Illustration" class="hero-image">
+            <div class="hero-text slide-up">
+                <h2>Master Your Algorithms</h2>
+                <p>Track your coding problems natively with spaced-repetition.</p>
+            </div>
+        </div>
+
+        <!-- Existing Auth side -->
+        <div class="auth-container slide-up" style="animation-delay: 0.2s;">
+            <div class="auth-card">
+                <h1 class="gradient-text">AlgoTrack</h1>
+                <p class="subtitle">Spaced-repetition coding problem tracker</p>
+                
+                <form id="login-form">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" required placeholder="Enter your email">
+                        <span id="email-error" class="error-message"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" required placeholder="Enter your password">
+                        <span id="password-error" class="error-message"></span>
+                    </div>
+                    
+                    <div id="auth-error" class="error-message global-error"></div>
+
+                    <button type="submit" class="btn btn-primary" id="login-btn">Login / Sign up</button>
+                </form>
+                
+                <div class="demo-section">
+                    <p>Demo Credentials</p>
+                    <p class="demo-text">demo@test.com / demo123</p>
+                    <button type="button" class="btn btn-secondary" id="demo-login-btn">Login as Demo</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="./src/pages/login.js"></script>
+</body>
+</html>
